@@ -32,14 +32,18 @@ public final class HttpUrlConnectionService {
         return connection;
     }
 
-    public static JsonReader getReader(HttpURLConnection connection) throws IOException {
+    public static String getContent(HttpURLConnection connection) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream(), "utf-8"));
         String line;
         StringBuilder sb = new StringBuilder("");
         while ((line = br.readLine()) != null) {
             sb.append(line);
         }
-        JsonReader reader = new JsonReader(new StringReader(sb.toString()));
+        return sb.toString();
+    }
+
+    public static JsonReader getReader(HttpURLConnection connection) throws IOException {
+        JsonReader reader = new JsonReader(new StringReader(getContent(connection)));
         reader.setLenient(true);
         return reader;
     }
