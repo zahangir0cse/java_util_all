@@ -32,10 +32,8 @@ public class BinarySearch {
         return -1;
     }
 
-    public static void main(String[] args) {
-        int [] elements = {10,20, 5, 30, 50};
-        Arrays.sort(elements); //In Binary search elements array must be sorted.
-        System.out.println("Sorted Elements: ");
+    public static void printElements(String message, int[] elements){
+        System.out.println(message);
         for (int i = 0; i < elements.length; i++) {
             if(i == 0){
                 System.out.print("{" + elements[i]+",");
@@ -45,6 +43,12 @@ public class BinarySearch {
                 System.out.print(elements[i]+"}");
             }
         }
+    }
+
+    public static void main(String[] args) {
+        int [] elements = {10,20, 5, 30, 50};
+        Arrays.sort(elements); //In Binary search elements array must be sorted.
+        printElements("Sorted Elements: ", elements);
         System.out.println();
         int searchElement = 31;
         int searchResultIndex = binarySearch(elements, 0, elements.length-1, searchElement);

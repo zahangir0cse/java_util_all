@@ -21,17 +21,8 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        int elements[] = {10, 2, 3, 5, 1, 12, 7};
-        int selectionSortOfElements[] = selectionSort(elements);
-        System.out.println("Sorted Elements by Selection Sort: ");
-        for (int i = 0; i < selectionSortOfElements.length; i++) {
-            if (i == 0) {
-                System.out.print("{" + selectionSortOfElements[i] + ",");
-            } else if (i < selectionSortOfElements.length - 1) {
-                System.out.print(selectionSortOfElements[i] + ",");
-            } else {
-                System.out.print(selectionSortOfElements[i] + "}");
-            }
-        }
+        int[] elements = {10, 2, 3, 5, 1, 12, 7};
+        int[] selectionSortOfElements = selectionSort(elements);
+        BinarySearch.printElements("Sorted Elements by Selection Sort: ", selectionSortOfElements);
     }
 }
