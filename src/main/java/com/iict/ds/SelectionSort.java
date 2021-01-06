@@ -1,7 +1,7 @@
 package com.iict.ds;
 
 public class SelectionSort {
-    public static int[] selectionSort(int[] elements) {
+    public static int[] selectionSort(int[] elements) { // Select the smallest no. and put it into first place, then next so on. Complexity O(n2)
         int numberOfElements = elements.length;
         int minIndex, temp;
         for (int index = 0; index < numberOfElements - 1; index++) {
@@ -12,9 +12,12 @@ public class SelectionSort {
                 }
             }
             if (minIndex != index) {
-                temp = elements[index];
+                /*temp = elements[index];
                 elements[index] = elements[minIndex];
-                elements[minIndex] = temp;
+                elements[minIndex] = temp;*/
+                elements[index] =  elements[index] + elements[minIndex];
+                elements[minIndex] = elements[index] - elements[minIndex];
+                elements[index] = elements[index] - elements[minIndex];
             }
         }
         return elements;

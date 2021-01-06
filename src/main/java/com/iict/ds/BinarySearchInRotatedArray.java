@@ -1,4 +1,4 @@
-package com.iict.leetcode;
+package com.iict.ds;
 
 public class BinarySearchInRotatedArray {
     public static void main(String[] args) {
@@ -17,10 +17,7 @@ public class BinarySearchInRotatedArray {
         if (searchElement == array[0]) {
             return 0;
         }
-        if (searchElement > array[0]) {
-            return binarySearch(array, 0, pivotIndex - 1, searchElement);
-        }
-        return binarySearch(array, pivotIndex + 1, array.length - 1, searchElement);
+        return  (searchElement > array[0]) ? binarySearch(array, 0, pivotIndex - 1, searchElement) : binarySearch(array, pivotIndex + 1, array.length - 1, searchElement);
     }
 
     public static int findPivotIndex(int[] array, int firstIndex, int lastIndex) {

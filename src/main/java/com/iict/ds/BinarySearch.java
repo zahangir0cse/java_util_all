@@ -9,11 +9,12 @@ public class BinarySearch {
             if (elements[midIndex] == searchElement) {
                 return midIndex;
             }
-            if (elements[midIndex] > searchElement) {
+            if ((elements[midIndex] > searchElement)) {
                 lastIndex = midIndex - 1;
             } else {
                 firstIndex = midIndex + 1;
             }
+
         }
         return -1;
     }
@@ -24,44 +25,41 @@ public class BinarySearch {
             if (elements[midIndex] == searchElement) {
                 return midIndex;
             }
-            if (elements[midIndex] > searchElement) {
-                return binarySearchByRecursion(elements, firstIndex, midIndex - 1, searchElement);
-            }
-            return binarySearchByRecursion(elements, midIndex + 1, lastIndex, searchElement);
+            return (elements[midIndex] > searchElement) ? binarySearchByRecursion(elements, firstIndex, midIndex - 1, searchElement) : binarySearchByRecursion(elements, midIndex + 1, lastIndex, searchElement);
         }
         return -1;
     }
 
-    public static void printElements(String message, int[] elements){
+    public static void printElements(String message, int[] elements) {
         System.out.println(message);
         for (int i = 0; i < elements.length; i++) {
-            if(i == 0){
-                System.out.print("{" + elements[i]+",");
-            }else if(i <elements.length -1){
-                System.out.print(elements[i]+",");
-            }else {
-                System.out.print(elements[i]+"}");
+            if (i == 0) {
+                System.out.print("{" + elements[i] + ",");
+            } else if (i < elements.length - 1) {
+                System.out.print(elements[i] + ",");
+            } else {
+                System.out.print(elements[i] + "}");
             }
         }
     }
 
     public static void main(String[] args) {
-        int [] elements = {10,20, 5, 30, 50};
+        int[] elements = {10, 20, 5, 30, 50};
         Arrays.sort(elements); //In Binary search elements array must be sorted.
         printElements("Sorted Elements: ", elements);
         System.out.println();
         int searchElement = 31;
-        int searchResultIndex = binarySearch(elements, 0, elements.length-1, searchElement);
-        int searchResultIndexByRecursion = binarySearchByRecursion(elements, 0, elements.length-1, searchElement);
-        if(searchResultIndex == -1){
+        int searchResultIndex = binarySearch(elements, 0, elements.length - 1, searchElement);
+        int searchResultIndexByRecursion = binarySearchByRecursion(elements, 0, elements.length - 1, searchElement);
+        if (searchResultIndex == -1) {
             System.out.println("Element not found");
-        }else {
-            System.out.println("Searched element found in "+searchResultIndex+ " position");
+        } else {
+            System.out.println("Searched element found in " + searchResultIndex + " position");
         }
-        if(searchResultIndexByRecursion == -1){
+        if (searchResultIndexByRecursion == -1) {
             System.out.println("Element not found by recursion");
-        }else {
-            System.out.println("Searched element found in "+searchResultIndexByRecursion+ " position by recursion");
+        } else {
+            System.out.println("Searched element found in " + searchResultIndexByRecursion + " position by recursion");
         }
     }
 

@@ -1,7 +1,7 @@
 package com.iict.ds;
 
 public class LinearSearch {
-    public static int searchResult(int [] elements, int searchElement) {
+    public static int searchResult(int [] elements, int searchElement) { // Complexity = O(n)
         for (int i = 0; i < elements.length; i++) {
             if(elements[i] == searchElement){
                 return i;
