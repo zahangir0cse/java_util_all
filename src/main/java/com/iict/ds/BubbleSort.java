@@ -7,9 +7,12 @@ public class BubbleSort {
         for (int i = 0; i < numberOfElements; i++) {
             for (int j = 0; j < numberOfElements - i - 1; j++) {
                 if (elements[j] > elements[j + 1]) {
-                    temp = elements[j];
+                    /*temp = elements[j];
                     elements[j] = elements[j + 1];
-                    elements[j + 1] = temp;
+                    elements[j + 1] = temp;*/
+                    elements[j] = elements[j] + elements[j+1];
+                    elements[j+1] = elements[j] - elements[j+1];
+                    elements[j] = elements[j] - elements[j+1];
                 }
             }
         }

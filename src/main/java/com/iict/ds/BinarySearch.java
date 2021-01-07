@@ -16,7 +16,7 @@ public class BinarySearch {
             }
 
         }
-        return -1;
+        return -1; //Worst Case Complexity = O(log n)
     }
 
     public static int binarySearchByRecursion(int[] elements, int firstIndex, int lastIndex, int searchElement) {
