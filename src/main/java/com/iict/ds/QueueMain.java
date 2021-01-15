@@ -55,7 +55,7 @@ class CircularQueue<E> {
             circularQueueElements[tail] = item;
             currentSize++;
 
-            if (head == -1) {
+            if (head == -1) { // If we insert element first time
                 head = tail;
             }
         }
