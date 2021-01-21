@@ -4,7 +4,7 @@ public class SelectionSort {
     public static int[] selectionSort(int[] elements) { // Select the smallest no. and put it into first place, then next so on. Complexity O(n2)
         int numberOfElements = elements.length;
         int minIndex, temp;
-        for (int index = 0; index < numberOfElements - 1; index++) { // 0
+        for (int index = 0; index < numberOfElements - 1; index++) { // 10, 2, 12, 1, 4, 6, 3, 8
             minIndex = index; // 0
             for (int comparisonIndex = index + 1; comparisonIndex < numberOfElements; comparisonIndex++) { // 1 --> n
                 if (elements[comparisonIndex] < elements[minIndex]) {
@@ -14,10 +14,10 @@ public class SelectionSort {
             if (minIndex != index) { //0
                 /*temp = elements[index];
                 elements[index] = elements[minIndex];
-                elements[minIndex] = temp;*/
-                elements[index] =  elements[index] + elements[minIndex];
-                elements[minIndex] = elements[index] - elements[minIndex];
-                elements[index] = elements[index] - elements[minIndex];
+                elements[minIndex] = temp;*///10      //1 =11
+                elements[index] =  elements[index] + elements[minIndex]; // element[0] = 10 + 1
+                elements[minIndex] = elements[index] - elements[minIndex]; //element[3] = 11 - 1 = 10
+                elements[index] = elements[index] - elements[minIndex];//element[0] = 11 - 10 = 1
             }
         }
         return elements;

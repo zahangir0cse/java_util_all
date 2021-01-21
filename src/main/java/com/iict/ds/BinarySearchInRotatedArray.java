@@ -2,20 +2,20 @@ package com.iict.ds;
 
 public class BinarySearchInRotatedArray {
     public static void main(String[] args) {
-        int[] arr = {6, 7, 1, 2, 3, 4, 5};
-        int searchElement = 7;
+        int[] arr = {6, 7, 8, 1, 2, 3, 4, 5};
+        int searchElement = 2;
         int searchIndex = binarySearchInPivotedArray(arr, searchElement);
         System.out.println(searchIndex);
 
     }
 
     public static int binarySearchInPivotedArray(int[] array, int searchElement) {
+        if (searchElement == array[0]) {
+            return 0;
+        }
         int pivotIndex = findPivotIndex(array, 0, array.length - 1);
         if (array[pivotIndex] == searchElement) {
             return pivotIndex;
-        }
-        if (searchElement == array[0]) {
-            return 0;
         }
         return  (searchElement > array[0]) ? binarySearch(array, 0, pivotIndex - 1, searchElement) : binarySearch(array, pivotIndex + 1, array.length - 1, searchElement);
     }
