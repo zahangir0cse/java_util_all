@@ -56,4 +56,26 @@ public class HeapSort {
         return childIndex / 2;
     }
 
+    /*---Priority Queue---*/
+    public static int extractMax(int [] maxHeap, int heapSize){
+        int maxItem = maxHeap[1];
+        maxHeap[1] = maxHeap[heapSize];
+        heapSize --;
+        maxHeapify(maxHeap, heapSize, 1);
+        return maxItem;
+    }
+
+    public static int insertNode(int [] maxHeap, int heapSize, int node){
+        maxHeap[++heapSize] = node;
+        int newNodeIndex = heapSize;
+        while (newNodeIndex>1 && maxHeap[newNodeIndex]> maxHeap[getParentIndex(newNodeIndex)]){
+            int parentIndex = getParentIndex(newNodeIndex);
+            maxHeap[parentIndex] = maxHeap[parentIndex] + maxHeap[newNodeIndex];
+            maxHeap[newNodeIndex] = maxHeap[parentIndex] -  maxHeap[newNodeIndex];
+            maxHeap[parentIndex] = maxHeap[parentIndex] -  maxHeap[newNodeIndex];
+            newNodeIndex = parentIndex;
+        }
+        return heapSize;
+    }
+
 }
