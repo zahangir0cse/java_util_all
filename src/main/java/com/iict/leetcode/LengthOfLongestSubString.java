@@ -6,7 +6,8 @@ import java.util.Map;
 public class LengthOfLongestSubString {
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubString("abcdafd"));
+//        System.out.println(lengthOfLongestSubString("abcdafd"));
+        System.out.println(getUniqueCharacterSubstring("abcdafd"));
     }
     public static int lengthOfLongestSubString(String s){
         if(s == null || s.equals("")){
@@ -35,7 +36,7 @@ public class LengthOfLongestSubString {
         for (int start = 0, end = 0; end < input.length(); end++) {
             currentChar = input.charAt(end); //a
             if (visited.containsKey(currentChar)) {//false
-                start = Math.max(visited.get(currentChar)+1, start);
+                start = Math.max(visited.get(currentChar)+1, start);//1
             }
             if (output.length() < end - start + 1) {//
                 output = input.substring(start, end + 1);

@@ -18,7 +18,7 @@ public class LongestPalindromeFinder {
             left--;
             right++;
         }
-        return s.substring(left + 1, right);
+        return s.substring(left + 1, right);//aba
     }
 
     // O(n^2)

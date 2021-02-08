@@ -2,7 +2,7 @@ package com.iict.leetcode;
 
 public class RegularExpressionMatching {
     public static void main(String[] args) {
-        System.out.println(isMatch("abbbb", "a.b*"));
+        System.out.println(isMatch("aab", ".*"));
     }
     public static boolean isMatch(String s, String p) {
         if(p.isEmpty()){
@@ -15,3 +15,5 @@ public class RegularExpressionMatching {
         return firstMatch && isMatch(s.substring(1), p.substring(1));
     }
 }
+
+//.*
