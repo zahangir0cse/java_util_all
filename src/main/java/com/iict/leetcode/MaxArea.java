@@ -2,7 +2,8 @@ package com.iict.leetcode;
 
 public class MaxArea {
     public static void main(String[] args) {
-
+        int [] a = {1,8,60,50,5,4,20};
+        System.out.println(maxArea2(a));
     }
     public static int maxArea(int[] height) {
         if(height.length == 0){
@@ -20,8 +21,8 @@ public class MaxArea {
         return maxArea;
     }
 
-    public int maxArea2(int[] height) {
-        if(height.length == 0){
+    public static int maxArea2(int[] height) {
+        if(height == null || height.length == 0){
             return 0;
         }
         if(height.length == 1){
