@@ -8,6 +8,7 @@ public class SerializationDemo {
         Employee employee = new Employee();
         employee.setAddress("Dhaka, Bangladesh");
         employee.setName("Zahangir Alam");
+        employee.setAge(27);
         FileOutputStream file = new FileOutputStream(fileName);
         ObjectOutputStream out = new ObjectOutputStream(file);
         out.writeObject(employee);
@@ -19,6 +20,7 @@ public class SerializationDemo {
         Employee employeeDeserializedObject = (Employee) in.readObject(); // Object deserialized here.
         System.out.println("Name: " + employeeDeserializedObject.getName());
         System.out.println("Address: " + employeeDeserializedObject.getAddress());
+        System.out.println("Age: " + employeeDeserializedObject.getAge());
         fileIn.close();
         in.close();
     }
