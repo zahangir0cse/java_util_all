@@ -19,5 +19,7 @@ public class SerializationDemo {
         Employee employeeDeserializedObject = (Employee) in.readObject(); // Object deserialized here.
         System.out.println("Name: " + employeeDeserializedObject.getName());
         System.out.println("Address: " + employeeDeserializedObject.getAddress());
+        fileIn.close();
+        in.close();
     }
 }
