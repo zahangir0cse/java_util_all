@@ -1,4 +1,4 @@
-package com.iict.designpattern.singleton.factory;
+package com.iict.designpattern.factory;
 
 public interface Polygon {
     String getType();

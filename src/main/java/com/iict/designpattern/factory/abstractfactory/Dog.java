@@ -1,6 +1,6 @@
-package com.iict.designpattern.singleton.factory.abstractfactory;
+package com.iict.designpattern.factory.abstractfactory;
 
-public class Dog implements Animal{
+public class Dog implements Animal {
     @Override
     public String getAnimal() {
         return "Dog";

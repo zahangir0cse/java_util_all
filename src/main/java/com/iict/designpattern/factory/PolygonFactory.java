@@ -1,4 +1,4 @@
-package com.iict.designpattern.singleton.factory;
+package com.iict.designpattern.factory;
 
 public class PolygonFactory {
     public Polygon getPolygon(int numberOfSides) {
