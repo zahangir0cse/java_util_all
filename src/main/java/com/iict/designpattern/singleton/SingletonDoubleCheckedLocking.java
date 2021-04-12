@@ -1,4 +1,4 @@
-package com.iict.singleton;
+package com.iict.designpattern.singleton;
 
 public class SingletonDoubleCheckedLocking {
     private static volatile SingletonDoubleCheckedLocking singletonDoubleCheckedLockingInstance = null;

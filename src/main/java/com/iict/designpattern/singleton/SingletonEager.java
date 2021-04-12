@@ -1,4 +1,4 @@
-package com.iict.singleton;
+package com.iict.designpattern.singleton;
 
 public class SingletonEager {
     private static SingletonEager singletonEagerInstance = new SingletonEager();
