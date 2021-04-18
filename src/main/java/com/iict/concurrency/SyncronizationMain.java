@@ -1,7 +1,7 @@
 package com.iict.concurrency;
 
 class Counter{
-    int num = 100;
+    int num;
 
     public synchronized void increase(){
         num++;
