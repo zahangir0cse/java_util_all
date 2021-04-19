@@ -8,7 +8,7 @@ class Counter{
     }
 }
 
-public class SyncronizationMain {
+public class SynchronizationMain {
     public static void main(String[] args) throws InterruptedException {
         Counter counter = new Counter();
 //        counter.increase();
