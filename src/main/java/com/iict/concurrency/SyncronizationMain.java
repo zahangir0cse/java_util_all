@@ -14,23 +14,17 @@ public class SyncronizationMain {
 //        counter.increase();
 //        counter.increase();
 //        counter.increase();
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 1000; i++) {
-                    counter.increase();//1000
-                }
-
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                counter.increase();//1000
             }
+
         });
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 1000; i++) {//2000
-                    counter.increase();
-                }
-
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {//2000
+                counter.increase();
             }
+
         });
         thread1.start();
         thread2.start();
