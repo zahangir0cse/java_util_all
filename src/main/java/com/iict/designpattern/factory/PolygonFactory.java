@@ -1,7 +1,7 @@
 package com.iict.designpattern.factory;
 
-public class PolygonFactory {
-    public Polygon getPolygon(int numberOfSides) {
+public class PolygonFactory {//Factory class
+    public  Polygon getPolygon(int numberOfSides) {
         if (numberOfSides == 3) {
             return new Triangle();
         }
