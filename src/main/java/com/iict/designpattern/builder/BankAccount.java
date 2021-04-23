@@ -7,6 +7,15 @@ public class BankAccount {
     //Optional parameters
     private String email;
     private boolean newsletter;
+    private String nid ;
+
+    public String getNid() {
+        return nid;
+    }
+
+    public void setNid(String nid) {
+        this.nid = nid;
+    }
 
     public String getName() {
         return name;
@@ -52,6 +61,7 @@ public class BankAccount {
         private String accountNumber;
         private String email;
         private boolean newsletter;
+        private String nid ;
 
         public BankAccountBuilder(String name, String accountNumber) {
             this.name = name;
@@ -65,6 +75,11 @@ public class BankAccount {
 
         public BankAccountBuilder wantNewsletter(boolean newsletter) {
             this.newsletter = newsletter;
+            return this;
+        }
+
+        public BankAccountBuilder withNid(String nid){
+            this.nid = nid;
             return this;
         }
 
