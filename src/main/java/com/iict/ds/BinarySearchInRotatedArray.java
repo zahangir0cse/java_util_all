@@ -2,7 +2,7 @@ package com.iict.ds;
 
 public class BinarySearchInRotatedArray {
     public static void main(String[] args) {
-        int[] arr = {6, 7, 8, 1, 2, 3, 4, 5};
+        int[] arr = {1, 2};
         int searchElement = 2;
         int searchIndex = binarySearchInPivotedArray(arr, searchElement);
         System.out.println(searchIndex);
@@ -14,6 +14,9 @@ public class BinarySearchInRotatedArray {
             return 0;
         }
         int pivotIndex = findPivotIndex(array, 0, array.length - 1);
+        if(pivotIndex == -1){
+            return binarySearch(array, 0, array.length -1, searchElement);
+        }
         if (array[pivotIndex] == searchElement) {
             return pivotIndex;
         }
