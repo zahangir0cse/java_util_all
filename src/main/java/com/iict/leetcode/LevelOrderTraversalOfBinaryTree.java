@@ -7,12 +7,14 @@ import java.util.Queue;
 
 class TreeNode {
     int val;
-    TreeNode1 left, right;
+    TreeNode left, right;
 
     public TreeNode() {
     }
-
-    public TreeNode(int val, TreeNode1 left, TreeNode1 right) {
+    public TreeNode(int val) {
+        this.val = val;
+    }
+    public TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
