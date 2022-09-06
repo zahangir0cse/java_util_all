@@ -10,7 +10,7 @@ public class BankAccMain {
         System.out.println(bankAccount.getAccountNumber());
         Employee employee = Employee.builder()
                             .name("Rabbi")
-                            .age(Long.valueOf(35))
+                            .age(35L)
                             .address("Dhaka")
                             .build();
         System.out.println(employee.getName());
