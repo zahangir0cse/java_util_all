@@ -9,12 +9,15 @@ public class ReverseLinkedList {
         reverse(head);
     }
     public static ListNode reverse(ListNode head){
-        if(head == null || head.next == null){
-            return head;
+        if(head == null){
+            return null;
         }
-        ListNode root = reverse(head.next);
-        head.next.next = head;
+        ListNode newHead = head;
+        if(head.next != null){
+            newHead = reverse(head.next);
+            head.next.next = head;
+        }
         head.next = null;
-        return root;
+        return newHead;
     }
 }
