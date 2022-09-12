@@ -1,4 +1,4 @@
-package com.iict.neetcode.array.linkedlist;
+package com.iict.neetcode.linkedlist;
 
 public class ListNode {
     int val;
