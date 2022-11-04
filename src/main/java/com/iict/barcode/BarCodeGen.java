@@ -42,8 +42,27 @@ public class BarCodeGen {
             out.close();
         }*/
 
-        createBarCode128("0129287342");
+//        createBarCode128("0129287342");
         //return outputFile;
+//        System.out.println(Math.round(1.50));
+        System.out.println(rounding(1.501f));
+    }
+
+    public static int rounding(float x){
+        int intVal = (int) x;
+        float fractionVal = x - intVal;
+        if(fractionVal < 0.5f){
+            return intVal;
+        }
+        return intVal + 1;
+    }
+    public static int ceiling(float x){
+        int intVal = (int) x;
+        float fractionVal = x - intVal;
+        if(fractionVal == 0.0f){
+            return intVal;
+        }
+        return intVal + 1;
     }
     public static void createBarCode128(String fileName) {
         try {
