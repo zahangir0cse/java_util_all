@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) throws URISyntaxException {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-       
+        headers.set("Authorization", "");
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("SerialNumber", "4728");
         jsonObject.put("ModifiedSince", "2022-10-17T00:00:00.0000000Z");
